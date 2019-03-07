@@ -1,0 +1,38 @@
+<h2>Local Food</h2>
+
+<form onsubmit="javascript:void(0)" style="max-width: 20em; margin-top: 2em;">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search Filter" ng-model="$ctrl.query" />
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Calories (kCal)</th>
+        <th>Fat (g)</th>
+        <th>Sugar(g)</th>
+        <th>Carbohydrates (g)</th>
+        <th></th>
+    </tr>
+    </thead>
+	<tr>
+		<td><input type="text" ng-model="$ctrl.newFoodItem.name"></td>
+		<td><input type="text" ng-model="$ctrl.newFoodItem.calories"></td>
+		<td><input type="text" ng-model="$ctrl.newFoodItem.fat"></td>
+		<td><input type="text" ng-model="$ctrl.newFoodItem.sugar"></td>
+		<td><input type="text" ng-model="$ctrl.newFoodItem.carbohydrates"></td>
+		<td><button ng-click ="$ctrl.newFood()">Add Food</button></td>
+	</tr>
+    <tr ng-repeat="f in $ctrl.food | filter:$ctrl.query track by f.id">
+        <td>
+            {{f.name}}
+        </td>
+        <td>{{f.calories}}</td>
+        <td>{{f.fat}}</td>
+        <td>{{f.sugar}}</td>
+        <td>{{f.carbohydrates}}</td>
+        <td><button ng-click ="$ctrl.addFood(f)">Add To Diet</button></td>
+    </tr>
+</table>

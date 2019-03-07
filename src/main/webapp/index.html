@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="foodApp" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=0" />
+<title>Food Database</title>
+
+<script src="webjars/angularjs/1.6.4/angular.min.js"></script>
+<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="webjars/angular-ui-router/1.0.8/release/angular-ui-router.min.js"></script>
+
+<script src="app.js"></script>
+
+<link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.css" />
+<link rel="stylesheet" href="/css/petclinic.css" />
+
+
+
+<script src="scripts/welcome/welcome.js"></script>
+<script src="scripts/welcome/welcome.component.js"></script>
+<script src="scripts/welcome/welcome.controller.js"></script>
+<script src="scripts/user-details/user-details.js"></script>
+<script src="scripts/user-details/user-details.component.js"></script>
+<script src="scripts/user-details/user-details.controller.js"></script>
+
+<script src="scripts/nutritionist-details/nutritionist-details.js"></script>
+<script src="scripts/nutritionist-details/nutritionist-details.component.js"></script>
+<script src="scripts/nutritionist-details/nutritionist-details.controller.js"></script>
+
+<script src="scripts/admin-details/admin-details.js"></script>
+<script src="scripts/admin-details/admin-details.component.js"></script>
+<script src="scripts/admin-details/admin-details.controller.js"></script>
+
+<script src="scripts/user-form/user-form.js"></script>
+<script src="scripts/user-form/user-form.component.js"></script>
+<script src="scripts/user-form/user-form.controller.js"></script>
+
+<script src="scripts/user-nutritionist/user-nutritionist.js"></script>
+<script src="scripts/user-nutritionist/user-nutritionist.component.js"></script>
+<script src="scripts/user-nutritionist/user-nutritionist.controller.js"></script>
+
+<script src="scripts/food-search/food-search.js"></script>
+<script src="scripts/food-search/food-search.component.js"></script>
+<script src="scripts/food-search/food-search.controller.js"></script>
+<script src="scripts/local-food-search/local-food-search.js"></script>
+<script src="scripts/local-food-search/local-food-search.component.js"></script>
+<script src="scripts/local-food-search/local-food-search.controller.js"></script>
+
+<script src="scripts/infrastructure/infrastructure.js"></script>
+<script src="scripts/infrastructure/httpErrorHandlingInterceptor.js"></script>
+
+</head>
+
+<body class="container">
+	<layout-nav></layout-nav>
+	<div class="container-fluid">
+		<div class="container xd-container">
+			<div ui-view=""></div>
+		</div>
+	</div>
+	<layout-footer></layout-footer>
+</body>
+</html>

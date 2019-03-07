@@ -1,0 +1,46 @@
+<h2>User Information</h2>
+
+<table class="table table-striped">
+	<tr>
+		<th class="col-sm-3">Name</th>
+		<td><b>{{$ctrl.user.firstName}} {{$ctrl.user.lastName}}</b></td>
+	</tr>
+	<tr>
+		<th>Weight</th>
+		<td>{{$ctrl.user.weight}}</td>
+	</tr>
+	<tr>
+		<th> Nutritionist</th>
+		<td>{{$ctrl.nutritionist.firstName}} {{$ctrl.nutritionist.lastName}} </td>
+	</tr>
+	<tr>
+		<td><a class="btn btn-default" ui-sref="userEdit({userId: $ctrl.user.id})">Edit User</a></td>
+		<td><a class="btn btn-default" ui-sref="userNutritionist({userId: $ctrl.user.id})">Edit Nutritionist</a></td>
+	</tr>
+</table>
+
+<h2>Diet    </h2>
+<div>
+<a class="btn btn-default" ui-sref="userFood({userId: $ctrl.user.id})">Add to Diet From Database</a>
+</div>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Food</th>
+			<th>Calories</th>
+			<th>Fat</th>
+			<th>Sugar</th>
+			<th>Carbohydrates</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tr ng-repeat="food in $ctrl.food track by food.id">
+		<th>{{food.name}}</th>
+		<th>{{food.calories}}</th>
+		<th>{{food.fat}}</th>
+		<th>{{food.sugar}}</th>
+		<th>{{food.carbohydrates}}</th>
+		<th><button ng-click="$ctrl.deleteFood(food)">Delete Food</button></th>
+	</tr>
+</table>

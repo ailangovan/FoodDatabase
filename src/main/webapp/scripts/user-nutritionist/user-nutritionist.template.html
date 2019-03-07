@@ -1,0 +1,24 @@
+<h2>Nutritionists</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th class="col-xs-3">First Name</th>
+			<th class="col-xs-3">Last Name</th>
+			<th class="col-xs-3">Medical Id</th>
+			<th></th>
+		</tr>
+
+	</thead>
+
+
+
+	<tr
+		ng-repeat="nutritionist in $ctrl.nutritionists track by nutritionist.id">
+		<th>{{nutritionist.firstName}}</th>
+		<th>{{nutritionist.lastName}}</th>
+		<th>{{nutritionist.medicalId}}</th>
+		
+		<th><button ng-click="$ctrl.setNutritionist(nutritionist.id)">Set
+				Nutritionist</button></th>
+	</tr>
+</table>

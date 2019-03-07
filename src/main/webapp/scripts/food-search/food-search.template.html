@@ -1,0 +1,27 @@
+<h2>Food</h2>
+
+<form onsubmit="javascript:void(0)" style="max-width: 20em; margin-top: 2em;">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" ng-model="$ctrl.newSearch" />
+        <button ng-click="$ctrl.search()">Search</button></th>
+    </div>
+    
+</form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>NDBNO#</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tr ng-repeat="f in $ctrl.food">
+        <td>
+            {{f.name}}
+        </td>
+        <td>{{f.ndbno}}</td>
+        <th><button ng-click="$ctrl.addFood(f)">Add Food To Local DB</button></th>
+    </tr>
+</table>

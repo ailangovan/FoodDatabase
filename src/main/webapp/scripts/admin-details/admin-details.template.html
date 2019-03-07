@@ -1,0 +1,127 @@
+<h2>Admin Information</h2>
+
+<table class="table table-striped">
+	<tr>
+		<th class="col-sm-3">Name</th>
+		<td><b>{{$ctrl.admin.firstName}} {{$ctrl.admin.lastName}}</b></td>
+	</tr>
+</table>
+
+<h2>Users</h2>
+
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th class="col-xs-3">First Name</th>
+			<th class="col-xs-3">Last Name</th>
+			<th class="col-xs-3">Weight</th>
+			<th class="col-xs-3">Username</th>
+			<th class="col-xs-3">Password</th>
+			<th></th>
+			<th></th>
+		</tr>
+
+	</thead>
+
+
+
+	<tr ng-repeat="user in $ctrl.users track by user.id">
+		<th>{{user.firstName}}</th>
+		<th>{{user.lastName}}</th>
+		<th>{{user.weight}}</th>
+		<th>{{user.username}}</th>
+		<th>{{user.password}}</th>
+		<th><button ui-sref="userDetails({userId: user.id})">View/Edit
+				User</button></th>
+		<th><button ng-click="$ctrl.removeUser(user)">Delete
+				User</button></th>
+	</tr>
+	<tr>
+		<td><input type="text" ng-model="$ctrl.newUser.firstName"></td>
+		<td><input type="text" ng-model="$ctrl.newUser.lastName"></td>
+		<td><input type="text" ng-model="$ctrl.newUser.weight"></td>
+		<td><input type="text" ng-model="$ctrl.newUser.username"></td>
+		<td><input type="text" ng-model="$ctrl.newUser.password"></td>
+		<td><button ng-click="$ctrl.addUser()">Add User</button></td>
+	</tr>
+</table>
+<h2>Nutritionists</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th class="col-xs-3">First Name</th>
+			<th class="col-xs-3">Last Name</th>
+			<th class="col-xs-3">MedicalId</th>
+			<th class="col-xs-3">Username</th>
+			<th class="col-xs-3">Password</th>
+			<th></th>
+			<th></th>
+		</tr>
+
+	</thead>
+
+
+
+	<tr ng-repeat="nutritionist in $ctrl.nutritionists track by nutritionist.id">
+		<th>{{nutritionist.firstName}}</th>
+		<th>{{nutritionist.lastName}}</th>
+		<th>{{nutritionist.medicalId}}</th>
+		<th>{{nutritionist.username}}</th>
+		<th>{{nutritionist.password}}</th>
+		<th><button ui-sref="nutritionistDetails({nutritionistId: nutritionist.id})">View/Edit
+				Nutritionist</button></th>
+		<th><button ng-click="$ctrl.removeNutritionist(nutritionist.id)">Delete
+				Nutritionist</button></th>
+	</tr>
+	<tr>
+		<td><input type="text" ng-model="$ctrl.newNutritionist.firstName"></td>
+		<td><input type="text" ng-model="$ctrl.newNutritionist.lastName"></td>
+		<td><input type="text" ng-model="$ctrl.newNutritionist.medicalId"></td>
+		<td><input type="text" ng-model="$ctrl.newNutritionist.username"></td>
+		<td><input type="text" ng-model="$ctrl.newNutritionist.password"></td>
+		<td><button ng-click="$ctrl.addNutritionist()">Add User</button></td>
+		<td></td>
+	</tr>
+
+</table>
+
+<h2>Food</h2>
+
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th class="col-xs-3">Name</th>
+			<th class="col-xs-3">Calories(kCal)</th>
+			<th class="col-xs-3">Fat</th>
+			<th class="col-xs-3">Sugar</th>
+			<th class="col-xs-3">Carbohydrates</th>
+			<th></th>
+			<th></th>
+		</tr>
+
+	</thead>
+
+
+
+	<tr ng-repeat="f in $ctrl.food | filter:$ctrl.query track by f.id">
+		<td>{{f.name}}</td>
+		<td>{{f.calories}}</td>
+		<td>{{f.fat}}</td>
+		<td>{{f.sugar}}</td>
+		<td>{{f.carbohydrates}}</td>
+		<td><button ng-click="$ctrl.removeFood(f)">Delete Food</button></td>
+	</tr>
+	<tr>
+		<td><input type="text" ng-model="$ctrl.newFood.name"></td>
+		<td><input type="text" ng-model="$ctrl.newFood.calories"></td>
+		<td><input type="text" ng-model="$ctrl.newFood.fat"></td>
+		<td><input type="text" ng-model="$ctrl.newFood.sugar"></td>
+		<td><input type="text" ng-model="$ctrl.newFood.carbohydrates"></td>
+		<td><button ng-click="$ctrl.addFood()">Add Food</button></td>
+	</tr>
+
+</table>
