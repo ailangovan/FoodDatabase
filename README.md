@@ -2,11 +2,13 @@ Overview:
 
 I generated a webapp that was deployed as a WAR file to AWS for interacting with a MySQL based Database to help track food and diets. 
 
+For the frontend, it was left to user discretion what tools to use. I do not have much experience with front end so I found a resource online for a front end, and modified it to suit the purpose of demonstrating functionality provided by the database. Also, authentication was not strictly necessary so it is implemented very weakly here. It is the first area I would seek to improve when revisiting this project. Looking back through this code, it was a big task assigned and meant to be completed in a team. If I had a chance to redo this project, I would spending more time thinking about the design of implementation of use cases before starting. Documentation throughout the codebase could also use more improvement.
+
 From my Databases course, I learned the tools used to implement the database functionality. The database was also hosted on AWS. The overall design of the data tables are described by this diagram:
 
 ![Design Class Diagram](https://i.imgur.com/R4ZJXI4.jpg)
 
-For the frontend, it was left to user discretion what tools to use. I do not have much experience with front end so I found a resource online for a front end, and modified it to suit the purpose of demonstrating functionality provided by the database. Also, authentication was not strictly necessary so it is implemented very weakly here. It is the first area I would seek to improve when revisiting this project.
+
 
 Problem
 
